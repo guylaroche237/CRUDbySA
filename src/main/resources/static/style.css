@@ -1,0 +1,10 @@
+@charset "ISO-8859-1";
+.pano,#liste{
+	border: 1px black solid;
+	margin: 10px;
+	padding: 20px;
+}
+
+.error,span{
+	color:red;
+}

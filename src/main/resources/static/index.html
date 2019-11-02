@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AngularJS Spring</title>
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/idx.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body ng-app="lycee" ng-controller="lyceectrol">
+
+<div class="container">
+ <div class="header page-header">
+     <h3>AngularJS Spring </h3>
+ </div>
+ <hr>
+ 
+ <div class="container">
+    
+    <div class="row" id="">
+      
+     
+    
+        <form class="col-lg-6 pano" name="myform" ng-show="ecran">
+        
+		      <div class="form-group row">
+                 <label for="text" class="col-md-3 col-form-label">Login :</label>
+				    <div class="col-md-9">
+				      <input type="text" ng-model="login" placeholder="login" name="login" ng-required="true" class="form-control" id="text">
+				      <span class="error" ng-show="myform.login.$invalid && myform.login.$touched">login invalid</span>
+				    </div>
+				    
+             </div>
+             
+			  <div class="form-group row">
+			    <label for="textarea" class="col-md-3 col-form-label">Password:</label>
+			    <div class="col-md-9">
+			      <input type="password" name="password" placeholder="password" ng-required="true" ng-model="password" class="form-control" id="textarea">
+			       <span class="error" ng-show="myform.password.$invalid && myform.password.$touched">password is not correct</span>
+			    </div>
+			  </div>
+			  
+			  <div class="form-group row">
+			    <label for="textarea" class="col-md-3 col-form-label">Email:</label>
+			    <div class="col-md-9">
+			      <input type="email" name="email" ng-required="true" placeholder="email" ng-model="email" class="form-control" id="textarea">
+			       <span class="error" ng-show="myform.email.$invalid && myform.email.$touched">email not correct</span>
+			    </div>
+			  </div>
+			  
+			  <div class="row">
+			     <div class="offset-lg-8">
+					     <button class="btn btn-primary" ng-disabled="myform.$invalid" ng-click="save()">Save</button>
+					    <button class="btn btn-danger" ng-click="reset()">Cancel</button>
+			      </div>
+			  </div>
+     </form>
+            
+    <div class="col-lg-6 pano" >
+        
+		      <div class="form-group row">
+                 <label for="text" class="col-md-3 col-form-label">Login :</label>
+				    <div class="col-md-9">
+				      <input type="text" ng-model="login" class="form-control" id="text">
+				    </div>
+             </div>
+             
+			  <div class="form-group row">
+			    <label for="textarea" class="col-md-3 col-form-label">Password:</label>
+			    <div class="col-md-9">
+			      <input type="password" ng-model="password" class="form-control" id="textarea">
+			    </div>
+			  </div>
+			  
+			  <div class="form-group row">
+			    <label for="textarea" class="col-md-3 col-form-label">Email:</label>
+			    <div class="col-md-9">
+			      <input type="email" ng-model="email" class="form-control" id="textarea">
+			    </div>
+			  </div>
+			  
+			  <div class="row">
+			          <div class="offset-lg-10">
+			              <button class="btn btn-primary" ng-click="update(id,login,password,email)">Update</button>
+			          </div>
+					    
+					    
+			      
+			  </div>
+			 
+			 
+     
+     </div>
+    
+       
+       
+       
+    
+    
+     
+     
+     
+     
+    </div>
+    <hr>
+    
+    <div id="liste">
+    
+      <table class="table">
+			  <thead class="thead-dark">
+			    <tr>
+			      <th scope="col">ID</th>
+			      <th scope="col">LOGIN</th>
+			      <th scope="col">PASSWORD</th>
+			      <th scope="col">EMAIL</th>
+			      <th scope="col">OPERATION</th>
+			    </tr>
+			  </thead>
+  <tbody>
+    <tr ng-repeat="elt in etudiants">
+      <td>{{elt.id}}</td>
+      <td>{{elt.login}}</td>
+      <td>{{elt.password}}</td>
+      <td>{{elt.email}}</td>
+      <td><button class="btn btn-success" ng-click="aficher(elt.id,elt.login,elt.password,elt.email)">UPDATE</button><button class="btn btn-danger" ng-click="del(elt.id)">DELETE</button></td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+    
+    </div>
+    
+   
+    
+  
+ 
+ </div>
+</div>
+
+
+
+
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+
+<script src="angular.min.js"></script> 
+<script src="file.js"></script>
+<script src="assets/js/myapp.js"></script>
+<script>
+  
+
+</script>
+
+
+</body>
+</html>

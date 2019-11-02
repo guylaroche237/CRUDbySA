@@ -1,0 +1,11 @@
+#pannel{
+	
+	border: 3px black solid;
+}
+.error{
+	color:red;
+}
+
+.ng-invalid.ng-touched{
+	border: 2px red solid;
+}
